@@ -201,6 +201,7 @@ async function run() {
       chart,
       "--home=/etc/.helm",
       "--install",
+      "--generate-name",
       //"--wait",
       //"--atomic",
       `--namespace=${namespace}`,
