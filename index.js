@@ -199,7 +199,7 @@ async function run() {
       "upgrade",
       release,
       chart,
-      "--home=/etc/.helm",
+//       "--home=/etc/.helm",
       "--install",
       "--generate-name",
       //"--wait",
@@ -264,7 +264,7 @@ async function run() {
       if (repoUsername) repoAddArgs.push(`--username=${repoUsername}`);
       if (repoPassword) repoAddArgs.push(`--password=${repoPassword}`);
       
-      repoAddArgs.push("--home=/etc/.helm");
+//       repoAddArgs.push("--home=/etc/.helm");
       
       console.log('adding repo...')
       await exec.exec(helm, repoAddArgs, opts);
