@@ -280,7 +280,12 @@ async function run() {
         ignoreReturnCode: true
       });
     } else {
-      await exec.exec(helm, args, opts);
+      try {
+        await exec.exec(helm, args, opts);
+      } catch (e) {
+        console.log('phil-error', e);
+        throw new Error(e);
+      }
     }
 
     await status(task === "remove" ? "inactive" : "success");
