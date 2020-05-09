@@ -283,7 +283,7 @@ async function run() {
     } else {
       try {
         // await exec.exec(helm, args, opts);
-        await exec.exec('echo', ["Hello"]);
+        await exec.exec('kubectl', ["get", "pods"]);
       } catch (e) {
         console.log('phil-error', e.message);
         throw new Error(e);
