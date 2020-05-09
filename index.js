@@ -163,7 +163,7 @@ async function run() {
     const version = getInput("version");
     const valueFiles = getValueFiles(getInput("value_files"));
     const removeCanary = getInput("remove_canary");
-    const helm = getInput("helm") || "helm";
+    const helm = getInput("helm") || "helm3";
     const timeout = getInput("timeout");
     const repo = getInput("repo");
     const repoAlias = getInput("repo-alias");
@@ -283,7 +283,7 @@ async function run() {
     } else {
       try {
         // await exec.exec(helm, args, opts);
-        await exec.exec(helm3, ["version"]);
+        await exec.exec(helm, ["version"]);
       } catch (e) {
         console.log('phil-error', e.message);
         throw new Error(e);
