@@ -15,7 +15,8 @@ RUN apk add --no-cache ca-certificates jq curl bash nodejs && \
    curl -L ${BASE_URL}/${HELM_3_FILE} |tar xvz && \
    mv linux-amd64/helm /usr/bin/helm3 && \
    chmod +x /usr/bin/helm3 && \
-   rm -rf linux-amd64
+   rm -rf linux-amd64 && \
+   helm version
     # Init version 2 helm:
     # helm init
 
