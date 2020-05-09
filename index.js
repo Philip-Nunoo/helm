@@ -283,7 +283,7 @@ async function run() {
     } else {
       try {
         // await exec.exec(helm, args, opts);
-        await exec.exec('echo', ['Hello world]);
+        await exec.exec('echo', ["Hello"]);
       } catch (e) {
         console.log('phil-error', e.message);
         throw new Error(e);
