@@ -17,6 +17,8 @@ spec:
       labels:
 {{ include "app.matchLabels" . | indent 8 }}
     spec:
+      hostNetwork: true
+      dnsPolicy: Default
     {{- with .Values.imagePullSecrets }}
       imagePullSecrets:
         {{- toYaml . | nindent 8 }}
